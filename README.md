@@ -1,7 +1,7 @@
 # Ideagen.Calculator
 1. Download and extract Ideagen-master.zip file.
 2. Use Visual Studio open Ideagen.sln.
-3. In solution explorer, Right click Calculator project and Set as Start Project.
+3. In solution explorer, right click Calculator project and Set as Start Project.
 4. Press F5 to execute Calculator project.
 
 # Time log
