@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Calculator
+namespace App
 {
     public static class StringExtensions
     {
-        public static readonly char _multiplyOperator = '*';
-        public static readonly char _divideOperator = '/';
-        public static readonly char _addOperator = '+';
-        public static readonly char _subtractOperator = '-';
-        private static readonly char[] _operators = { _multiplyOperator, _divideOperator, _addOperator, _subtractOperator };
+        private static readonly char[] _operators = {
+            OperatorExtensions.MultiplyOperator,
+            OperatorExtensions.DivideOperator,
+            OperatorExtensions.AddOperator,
+            OperatorExtensions.SubtractOperator
+        };
 
         public static string ToAlgorithm(this string value, int operatorIndex)
         {
@@ -62,7 +63,7 @@ namespace Calculator
         public static double Multiply(this string value)
         {
             var result = 0.0;
-            var values = value.Split(_multiplyOperator, StringSplitOptions.TrimEntries);
+            var values = value.Split(OperatorExtensions.MultiplyOperator, StringSplitOptions.TrimEntries);
 
             for (int i = 0; i <= values.Length - 1; i++)
             {
@@ -81,7 +82,7 @@ namespace Calculator
         public static double Divide(this string value)
         {
             var result = 0.0;
-            var values = value.Split(_divideOperator, StringSplitOptions.TrimEntries);
+            var values = value.Split(OperatorExtensions.DivideOperator, StringSplitOptions.TrimEntries);
 
             for (int i = 0; i <= values.Length - 1; i++)
             {
@@ -100,7 +101,7 @@ namespace Calculator
         public static double Add(this string value)
         {
             var result = 0.0;
-            var values = value.Split(_addOperator, StringSplitOptions.TrimEntries);
+            var values = value.Split(OperatorExtensions.AddOperator, StringSplitOptions.TrimEntries);
 
             foreach (var v in values)
             {
@@ -113,7 +114,7 @@ namespace Calculator
         public static double Subtract(this string value)
         {
             var result = 0.0;
-            var values = value.Split(_subtractOperator, StringSplitOptions.TrimEntries);
+            var values = value.Split(OperatorExtensions.SubtractOperator, StringSplitOptions.TrimEntries);
 
             for (int i = 0; i <= values.Length - 1; i++)
             {
